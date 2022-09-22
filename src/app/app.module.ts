@@ -3,8 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { menu } from './menu'
-import { navBar } from './navBar'
+import { menu } from './menu';
+import { botones } from './botones';
+import { navBar } from './navBar';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { navBar } from './navBar'
   declarations: [
     AppComponent,
     menu,
+    botones,
     navBar
   ],
   providers: [],
