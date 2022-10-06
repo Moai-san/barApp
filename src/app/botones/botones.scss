@@ -1,12 +1,20 @@
-div{
-    position: fixed;
-    left: 44.5%;
-    top: 30%;
+.py-5
+{
+    background-color: #282c34;
+    .col-md-6
+    {
+        background-color: inherit;
+    }
 }
-
 .btn-lg
 {
-    width: 200%;
     padding: 1vh;
     border-radius: 0%;
+    float: center;
+    max-width: 60%;
+}
+
+.btn-group-vertical
+{
+    display:block;
 }

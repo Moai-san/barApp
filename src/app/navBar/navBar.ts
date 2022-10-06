@@ -9,5 +9,7 @@ import {Component} from '@angular/core';
 
 export class navBar
 {
-    
+    isLoggedIn = false;
+    username?: string;    
+    logout(): void {}
 }
