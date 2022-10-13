@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { login } from './login';
+import { register } from './register';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +23,8 @@ import { navBar } from './navBar';
     menu,
     botones,
     navBar,
-    login
+    login,
+    register
   ],
   providers: [],
   bootstrap: [AppComponent]
