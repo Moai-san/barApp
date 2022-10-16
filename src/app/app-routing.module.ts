@@ -1,7 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 import { botones } from './botones';
 import { login } from './login';
-import { register } from './register/register';
+import { register } from './register';
 import { omesa } from './omesa'
 import { cmesa } from './cmesa'
 import { mactuales } from './mactuales'
@@ -17,8 +17,8 @@ const routes: Routes =
   //{ path: 'omesa', component: omesa},
   { path: 'cmesa', component: cmesa},
   { path: 'mactuales', component: mactuales},
-  { path: 'inventario', component: inventario}
-
+  { path: 'inventario', component: inventario},
+  { path: '**', component: botones}
 ];
 
 export const AppRoutingModule = RouterModule.forRoot(routes);

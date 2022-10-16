@@ -1,10 +1,13 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component(
 {
-    selector: 'mactuales',
     templateUrl: './mactuales.html',
     styleUrls: ['./mactuales.scss']
 })
 
-export class mactuales {}
+export class mactuales implements OnInit {
+    datos:Array<number>=[];
+    ngOnInit(): void {
+    }
+}

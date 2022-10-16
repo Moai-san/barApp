@@ -10,6 +10,9 @@ import { AppComponent } from './app.component';
 import { menu } from './menu';
 import { botones } from './botones';
 import { navBar } from './navBar';
+import { inventario } from './inventario';
+import { cmesa } from './cmesa';
+import { mactuales } from './mactuales';
 
 @NgModule({
   imports: [
@@ -24,7 +27,9 @@ import { navBar } from './navBar';
     botones,
     navBar,
     login,
-    register
+    register,
+    mactuales,
+    cmesa
   ],
   providers: [],
   bootstrap: [AppComponent]

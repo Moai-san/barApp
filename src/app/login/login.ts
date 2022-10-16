@@ -4,7 +4,6 @@ import { StorageService } from '../_services/storage.service';
 
 @Component(
 {
-    selector: 'login',
     templateUrl: './login.html',
     styleUrls: ['./login.scss']
 
