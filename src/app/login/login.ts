@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
-import { StorageService } from '../_services/storage.service';
+import { loginVars } from './loginVars';
 
 @Component(
 {
@@ -19,25 +19,22 @@ export class login implements OnInit
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private authService: AuthService, private storageService: StorageService) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    if (this.storageService.isLoggedIn()) {
+    if (loginVars.getIsLogged()) {
       this.isLoggedIn = true;
-      this.roles = this.storageService.getUser().roles;
     }
   }
 
   onSubmit(): void {
     const { username, password } = this.form;
-
+    console.log(username+password);
     this.authService.login(username, password).subscribe({
       next: data => {
-        this.storageService.saveUser(data);
-
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
-        this.roles = this.storageService.getUser().roles;
+        console.log(data);
+        loginVars.setSessionID((data.rut),(data.uname));
+        loginVars.setIsLogged(true);
         this.reloadPage();
       },
       error: err => {
