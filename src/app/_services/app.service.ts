@@ -18,4 +18,7 @@ export class AppService
     getMesas(): Observable<any> {
       return this.http.get(`${servidor}/getMesas`);
     }
+    getProductos(): Observable<any> {
+      return this.http.get(`${servidor}/getProductos`);
+    }
 }

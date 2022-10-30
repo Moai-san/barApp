@@ -17,7 +17,7 @@
             novalidate
           >
             <div class="form-group">
-              <label for="rut">rut</label>
+              <label for="rut">RUT</label>
               <input
                 type="text"
                 class="form-control"
@@ -30,7 +30,7 @@
                 [ngClass]="{ 'is-invalid': f.submitted && rut.errors }"
               />
               <div class="invalid-feedback" *ngIf="rut.errors && f.submitted">
-                <div *ngIf="rut.errors['required']">El rut es necesario</div>
+                <div *ngIf="rut.errors['required']">El RUT es necesario</div>
                 <div *ngIf="rut.errors['minlength']">
                   El rut debe tener almenos 9 caractéres
                 </div>
