@@ -5,12 +5,15 @@
         <thead>
             <tr>
                 <th scope="col">NUMERO</th>
+                <th scope="col">ESTADO</th>
             </tr>                      
         </thead>
 
         <tbody  >
             <tr *ngFor="let item of datos">
-                <td scope="row"  >{{item}}</td>
+                <td scope="row"  >{{item.id}}</td>
+                <td scope="row" *ngIf="item.status">Ocupada</td>
+                <td scope="row" *ngIf="!(item.status)">Libre</td>
             </tr>
             
         </tbody>

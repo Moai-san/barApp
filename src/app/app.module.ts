@@ -13,6 +13,7 @@ import { navBar } from './navBar';
 import { inventario } from './inventario';
 import { cmesa } from './cmesa';
 import { mactuales } from './mactuales';
+import { omesa } from './omesa';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { mactuales } from './mactuales';
     login,
     register,
     mactuales,
-    cmesa
+    cmesa,
+    omesa
   ],
   providers: [],
   bootstrap: [AppComponent]

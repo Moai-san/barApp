@@ -14,7 +14,7 @@ const routes: Routes =
   { path: '', component: botones},
   { path: 'login', component: login},
   { path: 'register', component: register},
-  //{ path: 'omesa', component: omesa},
+  { path: 'omesa', component: omesa},
   { path: 'cmesa', component: cmesa},
   { path: 'mactuales', component: mactuales},
   { path: 'inventario', component: inventario},

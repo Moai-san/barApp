@@ -5,14 +5,20 @@
         <thead>
             <tr>
                 <th scope="col">NUMERO</th>
+                <th scope="col">ESTADO</th>
                 <th scope="col">A CERRAR</th>
             </tr>                      
         </thead>
 
         <tbody  >
             <tr *ngFor="let item of datos">
-                <td scope="row"  >{{item}}</td>
-                <!--<td scope="row" id="preferencia">{{<input type="radio" id="check" value={{item}} (change)="setPreferenciaActual($event)" name="selection">}}</td> -->
+                <td scope="row"  >{{item.id}}</td>
+                <td scope="row" *ngIf="!(item.status)">LIBRE</td>
+                <td scope="row" *ngIf="item.status">OCUPADA</td>
+                <td scope="row" *ngIf="item.status" id="toClose">
+                    <input type="radio" id="check" value={{item.id}} (change)="setMesaStatus($event)" name="selection">
+                </td>
+                <td scope="row" *ngIf="!(item.status)">-</td>
             </tr>
             
         </tbody>
