@@ -24,12 +24,22 @@ export class AppService
     postDiscount(porcentaje: number ,mincompra: number, descripcion: string)
     {
       return this.http.post(
-        `${servidor}/regUser`,
+        `${servidor}/postDiscount`,
         {
           porcentaje,
           mincompra,
           descripcion,
           "status": false
+        },
+        httpOptions
+      );
+    }
+    mod_mesaStatus(mesa: number)
+    {
+      return this.http.post(
+        `${servidor}/mod_mesaStatus`,
+        {
+          mesa
         },
         httpOptions
       );

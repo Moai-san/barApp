@@ -10,6 +10,7 @@ import { mesa } from '../_classes/mesa';
 
 export class cmesa {
   datos:Array<mesa>=[];
+  selected:number = 0
   constructor(public BackEnd:AppService) {}
   ngOnInit(): void
   {
@@ -21,8 +22,17 @@ export class cmesa {
       });
   }
 
-  public setMesaStatus(event:any)
+  public selectMesa(event:any)
+  {  
+    this.selected =(event.target.value);
+    console.log(this.selected);
+  }
+
+  public setMesaStatus()
   {
-      console.log(event.target.value);
+    this.BackEnd.mod_mesaStatus(this.selected).subscribe({next: (value: any) =>
+      {
+        location.assign('')
+      }});
   }
 }
