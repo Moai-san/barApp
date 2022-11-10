@@ -1,0 +1,71 @@
+<section class="py-5">
+    <div class="container py-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6 col-xl-4">
+          <div class="card card-container">
+            <h1>Agregar Descuento</h1>
+            <form
+              name="form"
+              (ngSubmit)="f.form.valid && onSubmit()"
+              #f="ngForm"
+              novalidate
+            >
+              <div class="form-group">
+                <label for="porcentaje">Porcentaje de descuento</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  name="porcentaje"
+                  [(ngModel)]="form.porcentaje"
+                  required
+                  #porcentaje="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && porcentaje.errors }"
+                />
+                <div class="invalid-feedback" *ngIf="porcentaje.errors && f.submitted">
+                  <div *ngIf="porcentaje.errors['required']">El Porcentaje es necesario</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="minCompra">Minimo Compra</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  name="minCompra"
+                  [(ngModel)]="form.minCompra"
+                  #minCompra="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && minCompra.errors }"
+                />
+                <div class="invalid-feedback" *ngIf="minCompra.errors && f.submitted"></div>
+              </div>
+              <div class="form-group">
+                <label for="descripcion">Descripcion</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="descripcion"
+                  [(ngModel)]="form.descripcion"
+                  required
+                  #descripcion="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && descripcion.errors }"
+                />
+                <div class="invalid-feedback" *ngIf="descripcion.errors && f.submitted">
+                  <div *ngIf="descripcion.errors['required']">La descripcion es necesaria</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <button style="background-color: '#cc220b'; margin-top: 10px;" class="btn btn-primary btn-block">Sign Up</button>
+              </div>
+        
+              <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                No se pudo añadir el descuento :c!<br />{{ errorMessage }}
+              </div>
+            </form>
+        
+            <div class="alert alert-success" *ngIf="isSuccessful">
+              Descuento añadido con exito.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </section>

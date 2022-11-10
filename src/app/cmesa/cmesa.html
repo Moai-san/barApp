@@ -1,29 +1,37 @@
-<div id="tabla" class="fluid-container" > <!--(ngSubmit) = "guardarSeleccion()"-->
+<section class="py-5">
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 col-xl-4">
+                <div id="tabla" class="fluid-container" > <!--(ngSubmit) = "guardarSeleccion()"-->
 
-    <table class="table table-primary" >
+                    <table class="table table-primary" >
 
-        <thead>
-            <tr>
-                <th scope="col">NUMERO</th>
-                <th scope="col">ESTADO</th>
-                <th scope="col">A CERRAR</th>
-            </tr>                      
-        </thead>
+                        <thead>
+                            <tr>
+                                <th scope="col">NUMERO</th>
+                                <th scope="col">ESTADO</th>
+                                <th scope="col">A CERRAR</th>
+                            </tr>                      
+                        </thead>
 
-        <tbody  >
-            <tr *ngFor="let item of datos">
-                <td scope="row"  >{{item.id}}</td>
-                <td scope="row" *ngIf="!(item.status)">LIBRE</td>
-                <td scope="row" *ngIf="item.status">OCUPADA</td>
-                <td scope="row" *ngIf="item.status" id="toClose">
-                    <input type="radio" id="check" value={{item.id}} (change)="setMesaStatus($event)" name="selection">
-                </td>
-                <td scope="row" *ngIf="!(item.status)">-</td>
-            </tr>
-            
-        </tbody>
-        
-    </table>
-    <button type="submit" id="boton" > seleccionar </button>
+                        <tbody  >
+                            <tr *ngFor="let item of datos">
+                                <td scope="row"  >{{item.id}}</td>
+                                <td scope="row" *ngIf="!(item.status)">LIBRE</td>
+                                <td scope="row" *ngIf="item.status">OCUPADA</td>
+                                <td scope="row" *ngIf="item.status" id="toClose">
+                                    <input type="radio" id="check" value={{item.id}} (change)="setMesaStatus($event)" name="selection">
+                                </td>
+                                <td scope="row" *ngIf="!(item.status)">-</td>
+                            </tr>
+                            
+                        </tbody>
+                        
+                    </table>
+                    <button type="submit" id="boton" > seleccionar </button>
 
-</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

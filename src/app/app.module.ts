@@ -14,6 +14,7 @@ import { inventario } from './inventario';
 import { cmesa } from './cmesa';
 import { mactuales } from './mactuales';
 import { omesa } from './omesa';
+import { addDiscount } from './addDiscount';
 
 @NgModule({
   imports: [
@@ -31,7 +32,9 @@ import { omesa } from './omesa';
     register,
     mactuales,
     cmesa,
-    omesa
+    omesa,
+    inventario,
+    addDiscount
   ],
   providers: [],
   bootstrap: [AppComponent]
