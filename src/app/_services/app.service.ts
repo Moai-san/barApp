@@ -29,7 +29,7 @@ export class AppService
           porcentaje,
           mincompra,
           descripcion,
-          "status": false
+          status
         },
         httpOptions
       );

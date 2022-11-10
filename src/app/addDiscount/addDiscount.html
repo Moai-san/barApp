@@ -52,8 +52,13 @@
                   <div *ngIf="descripcion.errors['required']">La descripcion es necesaria</div>
                 </div>
               </div>
+              <label style="float: right;right: 3%;" class="switch">
+                <input type="checkbox" id="isActive">
+                <span style="color: '#cc220b'" class="slider btn btn-primary btn-block"></span>
+                <p style="color: black; font-size: small; margin-top: 10%;">Activar descuento?</p>
+              </label>
               <div class="form-group">
-                <button style="background-color: '#cc220b'; margin-top: 10px;" class="btn btn-primary btn-block">Sign Up</button>
+                <button style="background-color: '#cc220b'; margin-top: 10px;" class="btn btn-primary btn-block">Añadir</button>
               </div>
         
               <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
