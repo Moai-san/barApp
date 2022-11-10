@@ -21,7 +21,7 @@ export class AppService
     getProductos(): Observable<any> {
       return this.http.get(`${servidor}/getProductos`);
     }
-    postDiscount(porcentaje: number ,mincompra: number, descripcion: string)
+    postDiscount(porcentaje: number ,mincompra: number, descripcion: string, status: boolean)
     {
       return this.http.post(
         `${servidor}/postDiscount`,

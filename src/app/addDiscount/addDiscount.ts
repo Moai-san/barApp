@@ -27,7 +27,8 @@ export class addDiscount
     onSubmit(): void
     {
         const { porcentaje, minCompra, descripcion } = this.form;
-        this.BackEnd.postDiscount(porcentaje,minCompra, descripcion).subscribe({
+        var active = document.getElementById("isActive");
+        this.BackEnd.postDiscount(porcentaje,minCompra, descripcion,false).subscribe({
           next: data => {
             console.log(data);
             this.isSuccessful = true;
