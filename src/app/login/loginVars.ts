@@ -6,6 +6,7 @@ export module loginVars
 {
   var key ="6574";
   var isLogged:boolean = false;
+  var isAdmin:boolean = false;
   var sessionId:string ='';
   var localStorage:LocalstorageService =new LocalstorageService();
   
@@ -26,9 +27,28 @@ export module loginVars
     isLogged =status;
     if(isLogged==false)
     {
+      setIsAdmin(false);
       localStorage.removeData('sessionID');
       sessionId='';
     }
+  }
+
+  export function getIsAdmin()
+  {
+    if(isAdmin==false)
+    {
+      if(localStorage.getData('isAdmin'))
+      {
+        return JSON.parse(localStorage.getData('isAdmin'));
+      }
+    }
+    return(isAdmin);
+  }
+
+  export function setIsAdmin(status:boolean)
+  {
+    localStorage.saveData('isAdmin',JSON.stringify(status));
+    isAdmin =status;
   }
 
   export function setSessionID(rut:String,uname:string)

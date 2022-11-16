@@ -15,6 +15,7 @@ export class login implements OnInit
     password: null
   };
   isLoggedIn = false;
+  isAdmin =false;
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
@@ -24,6 +25,9 @@ export class login implements OnInit
   ngOnInit(): void {
     if (loginVars.getIsLogged()) {
       this.isLoggedIn = true;
+      if (loginVars.getIsAdmin()){
+        this.isAdmin = true;
+      }
     }
   }
 
@@ -35,6 +39,25 @@ export class login implements OnInit
         console.log(data);
         loginVars.setSessionID((data.rut),(data.uname));
         loginVars.setIsLogged(true);
+        switch (data.rol) {
+          case 0:
+          {
+            loginVars.setIsAdmin(false);
+            break;
+          }
+        
+          case 1:
+          {
+            loginVars.setIsAdmin(true);
+            break;
+          }
+
+          default:
+          {
+            console.log("jaja saludos");
+            break;
+          }
+        }
         this.reloadPage();
       },
       error: err => {

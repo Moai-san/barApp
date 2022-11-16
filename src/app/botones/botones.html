@@ -2,26 +2,27 @@
     <div class="container py-5">
         <div class="row d-flex justify-content-center">
             <div class="col-md-6 col-xl-4">
-                <div class="btn-group-vertical column-content-center text-center align-items-center center">
+                <div *ngIf="isLoggedIn" class="btn-group-vertical column-content-center text-center align-items-center center">
+                    
                     <button type="button" class="btn btn-danger btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off">
                         <a href="/omesa" routerLink="omesa" style="text-decoration: none; color: #fff;">Abrir Mesa</a>
                     </button>
-                
+
                     <br/><br/>
-                
+
                     <button type="button" class="btn btn-danger btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off">
                         <a href="/cmesa" routerLink="cmesa" style="text-decoration: none; color: #fff;">Cerrar Mesa</a>
                     </button>
                 
-                    <br/><br/>
+                    <br *ngIf="isAdmin"/><br *ngIf="isAdmin"/>
                 
-                    <button type="button" id="button2" class="btn btn-danger btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off">
+                    <button *ngIf="isAdmin" type="button" id="button2" class="btn btn-danger btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off">
                         <a href="/mactuales" routerLink="mactuales" style="text-decoration: none; color: #fff;">Mesas Actuales</a>
                     </button>
                 
-                    <br/><br/>
+                    <br *ngIf="isAdmin"/><br *ngIf="isAdmin"/>
                 
-                    <button type="button" class="btn btn-danger btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off">
+                    <button *ngIf="isAdmin" type="button" class="btn btn-danger btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off">
                         <a href="/addDiscount" routerLink="addDiscount" style="text-decoration: none; color: #fff;">Añadir Descuento</a>
                     </button>
                 
@@ -37,6 +38,7 @@
                         <a href="/inventario" routerLink="inventario" style="text-decoration: none; color: #fff;">Ver Inventario</a>
                     </button>
                 </div>
+                <img id="notLoggedImg" class="img-fluid" *ngIf="!isLoggedIn" src="../../assets/Images/notLogged.jpeg">
             </div>
         </div>
     </div>
