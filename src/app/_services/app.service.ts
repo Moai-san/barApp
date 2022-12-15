@@ -61,9 +61,7 @@ export class AppService
     {
       return this.http.post(
         `${servidor}/addProduct`,
-        {
-          toAppend
-        },
+        JSON.stringify(JSON.parse(toAppend)),
         httpOptions
       );
     }

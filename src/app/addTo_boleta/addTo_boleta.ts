@@ -45,8 +45,8 @@ export class addTo_boleta
 
     public appendTo_pedido()
     {
-        var toAppend:string="\"idUsuario\": ".concat(loginVars.getRut(loginVars.getSessionID()));
-        toAppend =toAppend.concat(",\n\"mesa\": ".concat(this.selected.toString()),",\n\"pedido\":{");
+        var toAppend:string="{\"idUsuario\": \"".concat(loginVars.getRut(loginVars.getSessionID()).concat('"'));
+        toAppend =toAppend.concat(",\"mesa\": ".concat(this.selected.toString()),",\"pedido\":{");
         //console.log(this.prodTo_add.length);
         for (let i = 0; i < this.prodTo_add.length; i++)
         {
@@ -56,7 +56,7 @@ export class addTo_boleta
             }
             toAppend =toAppend.concat(this.prodTo_add[i]);
         }
-        toAppend =toAppend.concat("\n}")
+        toAppend =toAppend.concat("}}")
         this.BackEnd.appendTo_boleta(toAppend);
         
     }
