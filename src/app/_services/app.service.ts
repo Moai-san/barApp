@@ -59,11 +59,10 @@ export class AppService
 
     appendTo_boleta(toAppend:string)
     {
+      console.log(toAppend);
       return this.http.post(
         `${servidor}/addProduct`,
-        {
-          toAppend
-        },
+        JSON.stringify(toAppend),
         httpOptions
       );
     }

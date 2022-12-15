@@ -45,8 +45,8 @@ export class addTo_boleta
 
     public appendTo_pedido()
     {
-        var toAppend:string="\"idUsuario\": ".concat(loginVars.getRut(loginVars.getSessionID()));
-        toAppend =toAppend.concat(",\n\"mesa\": ".concat(this.selected.toString()),",\n\"pedido\":{");
+        var toAppend:string="{ ".concat("idUsuario: ","\"",loginVars.getRut(loginVars.getSessionID()),"\"");
+        toAppend =toAppend.concat(",mesa: ".concat(this.selected.toString()),",pedido:{ ");
         //console.log(this.prodTo_add.length);
         for (let i = 0; i < this.prodTo_add.length; i++)
         {
@@ -56,8 +56,10 @@ export class addTo_boleta
             }
             toAppend =toAppend.concat(this.prodTo_add[i]);
         }
-        toAppend =toAppend.concat("\n}")
-        this.BackEnd.appendTo_boleta(toAppend);
+        toAppend =toAppend.concat(" }"," }")
+        console.log(toAppend);
+        
+        this.BackEnd.appendTo_boleta(toAppend).subscribe();
         
     }
 
@@ -65,13 +67,13 @@ export class addTo_boleta
     {
         for(let i=0;i<this.prodTo_add.length;i++)
         {
-            if(this.prodTo_add[i].startsWith(",\n\"".concat(id.toString(),"\": ")))
+            if(this.prodTo_add[i].startsWith(",\'".concat(id.toString(),"\': ")))
             {
-                this.prodTo_add[i]=(",\n\"".concat(id.toString(),"\": ",event.target.value));
+                this.prodTo_add[i]=(",\'".concat(id.toString(),"\': ",event.target.value));
                 return;
             }
         }
-        this.prodTo_add.push(",\n\"".concat(id.toString(),"\": ",event.target.value));
+        this.prodTo_add.push(",\'".concat(id.toString(),"\': ",event.target.value));
         
         //console.log(this.prodTo_add[this.prodTo_add.length-1]);
         //console.log(this.prodTo_add[id]);
