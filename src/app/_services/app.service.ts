@@ -44,4 +44,27 @@ export class AppService
         httpOptions
       );
     }
+
+    abrirMesa(mesa:number,usuario:string)
+    {
+      return this.http.post(
+      `${servidor}/abrirMesa`,
+      {
+        mesa,
+        usuario
+      },
+      httpOptions
+      );
+    }
+
+    appendTo_boleta(toAppend:string)
+    {
+      return this.http.post(
+        `${servidor}/addProduct`,
+        {
+          toAppend
+        },
+        httpOptions
+      );
+    }
 }

@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import { loginVars } from '../login/loginVars';
 
 @Component(
 {
@@ -9,5 +10,14 @@ import {Component} from '@angular/core';
 })
 export class menu
 {
-    
+    isLoggedIn = false;
+    isAdmin =false;
+    ngOnInit(): void {
+        if (loginVars.getIsLogged()) {
+          this.isLoggedIn = true;
+        }
+        if (loginVars.getIsAdmin()) {
+            this.isAdmin = true;
+        }
+      }
 }

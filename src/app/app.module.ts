@@ -15,6 +15,7 @@ import { cmesa } from './cmesa';
 import { mactuales } from './mactuales';
 import { omesa } from './omesa';
 import { addDiscount } from './addDiscount';
+import { addTo_boleta } from './addTo_boleta';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { addDiscount } from './addDiscount';
     cmesa,
     omesa,
     inventario,
-    addDiscount
+    addDiscount,
+    addTo_boleta
   ],
   providers: [],
   bootstrap: [AppComponent]

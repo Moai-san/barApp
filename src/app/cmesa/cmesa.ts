@@ -10,7 +10,7 @@ import { mesa } from '../_classes/mesa';
 
 export class cmesa {
   datos:Array<mesa>=[];
-  selected:number = 0
+  selected:number = 0;
   constructor(public BackEnd:AppService) {}
   ngOnInit(): void
   {

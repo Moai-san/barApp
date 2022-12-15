@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import { AppService } from '../_services/app.service';
 import { mesa } from '../_classes/mesa';
+import { loginVars } from '../login/loginVars';
 
 @Component(
 {
@@ -30,7 +31,7 @@ export class omesa {
 
   public setMesaStatus()
   {
-    this.BackEnd.mod_mesaStatus(this.selected).subscribe({next: (value: any) =>
+    this.BackEnd.abrirMesa(this.selected,loginVars.getRut(loginVars.getSessionID())).subscribe({next: (value: any) =>
       {
         location.assign('')
       }});

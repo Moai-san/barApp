@@ -7,6 +7,7 @@ import { cmesa } from './cmesa'
 import { mactuales } from './mactuales'
 import { inventario } from './inventario'
 import { addDiscount } from './addDiscount';
+import { addTo_boleta } from './addTo_boleta';
 
 
 
@@ -20,6 +21,7 @@ const routes: Routes =
   { path: 'mactuales', component: mactuales},
   { path: 'inventario', component: inventario},
   { path: 'addDiscount', component: addDiscount},
+  { path: 'addToBoleta', component: addTo_boleta},
   { path: '**', component: botones}
 ];
 

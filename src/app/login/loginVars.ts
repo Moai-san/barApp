@@ -66,12 +66,19 @@ export module loginVars
     }
     return sessionId;
   }
+
   export function getUname(myId:string)
   {
     var user:Array<string> =decrypt(myId).split(",");
     return(user[1]);
   }
   
+  export function getRut(myId:string)
+  {
+    var user:Array<string> =decrypt(myId).split(",");
+    return(user[0]);
+  }
+
   function encrypt(txt: string): string {
     return CryptoJS.AES.encrypt(txt, key).toString();
   }
